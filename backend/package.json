@@ -1,0 +1,23 @@
+{
+  "name": "content-moderation-app-backend",
+  "version": "1.0.0",
+  "description": "Backend for the Content Moderation App",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "lint": "eslint 'src/**/*.js'"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^6.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.10.0",
+    "nodemon": "^2.0.15"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
