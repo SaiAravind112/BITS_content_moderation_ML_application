@@ -74,3 +74,6 @@ MLModel/.ipynb_checkpoints
 
 # Docker
 docker-compose.override.yml
+
+#temp
+temp/

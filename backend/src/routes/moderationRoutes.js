@@ -1,5 +1,4 @@
 const express = require('express');
-const router = express.Router();
 const ModerationController = require('../controllers/moderationController');
 
 // Create an instance of the ModerationController
@@ -49,6 +48,22 @@ module.exports = function setModerationRoutes(app) {
     } catch (err) {
       console.error('Error while reviewing Content Status:', err);
       res.status(500).json({ error: 'Error while reviewing Content Status' });
+    }
+  });
+
+  app.post('/ug-content/feedback', async (req, res) => {
+  
+    try {
+      const updatedEntry = await moderationController.updateFeedback(req.body);
+
+      if (!updatedEntry) {
+        return res.status(404).json({ message: 'Entry not found' });
+      }
+  
+      res.status(200).json({ message: 'Feedback updated successfully', entry: updatedEntry });
+    } catch (error) {
+      console.error('Error updating feedback:', error);
+      res.status(500).json({ message: 'Internal server error' });
     }
   });
 };

@@ -20,7 +20,13 @@ class TextInput(BaseModel):
 async def predict(input: TextInput):
     try:
         prediction = model.predict([input.text])
+        probabilities = model.predict_proba([input.text])
+        inappropriate_probability = probabilities[0][1]
         result = "inappropriate" if prediction[0] == 1 else "appropriate"
-        return {"text": input.text, "moderationStatus": result}
+        return {
+            "text": input.text,
+            "moderationStatus": result,
+            "inappropriateProbability": inappropriate_probability
+        }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

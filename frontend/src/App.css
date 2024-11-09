@@ -70,9 +70,7 @@ form {
   flex-direction: column;
   gap: 10px;
   align-items: center;
-  /* Center the form elements */
-  padding: 0 20px;
-  width: 100%
+  width: 100%;
   /* Add padding on the sides */
 }
 
@@ -292,4 +290,168 @@ p {
 .review-button .icon {
   margin-left: 5px;
   font-size: 16px;
+}
+
+/* Add this CSS to your main CSS file or a specific header CSS file */
+
+/* Container for the header */
+.header {
+  background-color: #333;  /* Dark background */
+  padding: 1rem;           /* Padding around the nav */
+  color: #fff;             /* White text color */
+}
+
+/* Navigation links style */
+.header nav ul {
+  list-style-type: none;   /* Remove bullet points from list */
+  display: flex;           /* Align items horizontally */
+  gap: 1.5rem;             /* Space between links */
+  margin: 0;               /* Remove default margin */
+  padding: 0;              /* Remove default padding */
+}
+
+.header nav ul li {
+  display: inline;         /* Inline links */
+}
+
+/* Link style */
+.header nav ul li a {
+  color: #fff;             /* White text color */
+  text-decoration: none;   /* Remove underline */
+  font-weight: bold;
+}
+
+.header nav ul li a:hover {
+  color: #ff9800;          /* Change color on hover */
+}
+
+/* Tag Styling */
+.tag {
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.9em;
+  color: white;
+  text-align: center;
+  margin-left: 0.5em;
+}
+
+.tag.pass {
+  background-color: #28a745; /* Green */
+}
+
+.tag.warn {
+  background-color: #ffc107; /* Yellow */
+  color: #212529; /* Dark text for contrast */
+}
+
+.tag.block {
+  background-color: #dc3545; /* Red */
+}
+
+/* Style for the version selector dropdown */
+select {
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+}
+
+/* Hover effect for the dropdown */
+select:hover {
+  border-color: #888;
+}
+
+/* Focus effect for the dropdown */
+select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Optional styles for the submit button */
+button.submit {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.submit:hover {
+  background-color: #0056b3;
+}
+
+.feedback-button {
+  padding: 6px 12px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.feedback-button:hover:not(.disabled) {
+  background-color: #0056b3;
+}
+
+.feedback-button.disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.feedback-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+.feedback-popup h3 {
+  margin-top: 0;
+}
+
+.feedback-popup textarea {
+  width: 100%;
+  height: 80px;
+  margin: 10px 0;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.feedback-popup button {
+  margin-right: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.feedback-popup button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.feedback-popup button[type="button"] {
+  background-color: #ccc;
+  color: #333;
 }

@@ -4,6 +4,8 @@ const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const setModerationRoutes = require('./routes/moderationRoutes');
+const setonfigRoutes = require('./routes/configRoutes');
+const setExportRoutes = require('./routes/exportRoutes');
 
 const corsOptions = {
   origin: 'http://localhost:3000', // Allow only this origin
@@ -18,6 +20,7 @@ app.use(bodyParser.json());
 
 // Import models
 require('./models/contentModerationModel');
+require('./models/configModel');
 
 const mongoUri = process.env.MONGO_URI || 'mongodb://localhost:27017/content-moderation';
 
@@ -35,6 +38,8 @@ mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection 
 
 // Set up moderation routes
 setModerationRoutes(app);
+setonfigRoutes(app);
+setExportRoutes(app);
 
 // Start the server
 const port = process.env.PORT || 3333;
