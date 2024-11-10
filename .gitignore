@@ -38,10 +38,6 @@ backend/dist/
 
 # FastAPI server
 uvicorn/__pycache__/
-uvicorn/*.pyc
-uvicorn/*.pyo
-uvicorn/*.pyd
-uvicorn/*.pkl
 
 # Python
 *.py[cod]
@@ -77,3 +73,7 @@ docker-compose.override.yml
 
 #temp
 temp/
+
+uvcorn/saved_model1/
+uvcorn/saved_model/
+TEST/saved_model/
